@@ -17,7 +17,7 @@ class sitting extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          Begin Meditation
         </Text>
         <Text style={styles.instructions}>
           To get started, edit index.ios.js
@@ -36,16 +36,17 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#000000',
   },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
+    color: '#ffffff',
     margin: 10,
   },
   instructions: {
     textAlign: 'center',
-    color: '#333333',
+    color: '#ffffff',
     marginBottom: 5,
   },
 });
