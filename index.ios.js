@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -12,19 +6,20 @@ import {
   View
 } from 'react-native';
 
+import Drawer from 'react-native-drawer'
+
 class sitting extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Begin Meditation
+        <Text style={styles.meditationstatus}>
+          BEGIN MEDITATION
+        </Text>
+        <Text style={styles.timer}>
+          20:00
         </Text>
         <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
+          BEGIN
         </Text>
       </View>
     );
@@ -36,12 +31,18 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#000000',
+    backgroundColor: '#484848',
   },
-  welcome: {
+  meditationstatus: {
     fontSize: 20,
     textAlign: 'center',
-    color: '#ffffff',
+    color: '#A5A5A5',
+    margin: 10,
+  },
+  timer: {
+    fontSize: 50,
+    textAlign: 'center',
+    color: '#A5A5A5',
     margin: 10,
   },
   instructions: {
