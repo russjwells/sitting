@@ -3,7 +3,8 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Image
 } from 'react-native';
 
 import Drawer from 'react-native-drawer'
@@ -12,15 +13,14 @@ class sitting extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <Image source={require('./app/img/sittingtitle.png')} />
         <Text style={styles.meditationstatus}>
           BEGIN MEDITATION
         </Text>
         <Text style={styles.timer}>
           20:00
         </Text>
-        <Text style={styles.instructions}>
-          BEGIN
-        </Text>
+        <Image source={require('./app/img/multidimensionalmeditator.png')} />
       </View>
     );
   }
