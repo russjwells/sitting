@@ -46,7 +46,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#343434',
-    height: 20,
+    height: 60,
+    alignSelf: 'stretch',
   },
   meditationstatus: {
     fontSize: 20,
