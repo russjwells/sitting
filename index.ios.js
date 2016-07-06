@@ -13,14 +13,18 @@ class sitting extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image source={require('./app/img/sittingtitle.png')} />
-        <Text style={styles.meditationstatus}>
-          BEGIN MEDITATION
-        </Text>
-        <Text style={styles.timer}>
-          20:00
-        </Text>
-        <Image source={require('./app/img/multidimensionalmeditator.png')} />
+        <View style={styles.topbar}>
+          <Image source={require('./app/img/sittingtitle.png')} />
+        </View>
+        <View style={styles.bodyarea}>
+          <Text style={styles.meditationstatus}>
+            BEGIN MEDITATION
+          </Text>
+          <Text style={styles.timer}>
+            20:00
+          </Text>
+          <Image source={require('./app/img/multidimensionalmeditator.png')} />
+        </View>
       </View>
     );
   }
@@ -29,9 +33,20 @@ class sitting extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    backgroundColor: '#484848',
+  },
+  bodyarea: {
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#484848',
+  },
+  topbar: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#343434',
+    height: 20,
   },
   meditationstatus: {
     fontSize: 20,
