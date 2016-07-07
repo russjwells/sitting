@@ -68,15 +68,18 @@ const styles = StyleSheet.create({
   meditationstatus: {
     fontSize: 20,
     textAlign: 'center',
+    fontFamily: 'AvantGarde Md BT',
     color: '#A5A5A5',
     margin: 10,
     top: 60,
   },
   timer: {
     fontSize: 80,
+    fontFamily: 'AvantGarde Md BT',
     textAlign: 'center',
     color: '#A5A5A5',
     margin: 10,
+    marginBottom: 60,
   },
   button: {
     bottom: 60,
