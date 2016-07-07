@@ -14,7 +14,12 @@ class sitting extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.topbar}>
-          <Image source={require('./app/img/sittingtitle.png')} />
+          <View style={styles.drawericon}>
+            <Image source={require('./app/img/sandwichdrawericon.png')} />
+          </View>
+          <View style={styles.apptitle}>
+            <Image source={require('./app/img/sittingtitle.png')} />
+          </View>
         </View>
         <View style={styles.bodyarea}>
           <Text style={styles.meditationstatus}>
@@ -43,11 +48,20 @@ const styles = StyleSheet.create({
     backgroundColor: '#484848',
   },
   topbar: {
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
     backgroundColor: '#343434',
     height: 60,
     alignSelf: 'stretch',
+  },
+  drawericon: {
+    left: 10,
+    top: 30,
+  },
+  apptitle: {
+    left: 95,
+    top: 30,
   },
   meditationstatus: {
     fontSize: 20,
@@ -56,7 +70,7 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   timer: {
-    fontSize: 50,
+    fontSize: 60,
     textAlign: 'center',
     color: '#A5A5A5',
     margin: 10,
