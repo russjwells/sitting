@@ -28,7 +28,7 @@ class sitting extends Component {
           <Text style={styles.timer}>
             20:00
           </Text>
-          <Image source={require('./app/img/multidimensionalmeditator.png')} />
+          <Image style={styles.button} source={require('./app/img/multidimensionalmeditator.png')} />
         </View>
       </View>
     );
@@ -38,12 +38,7 @@ class sitting extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    backgroundColor: '#484848',
-  },
-  bodyarea: {
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'center',
     backgroundColor: '#484848',
   },
@@ -63,23 +58,29 @@ const styles = StyleSheet.create({
     left: 95,
     top: 30,
   },
+  bodyarea: {
+    flex: 1,
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    backgroundColor: '#484848',
+  },
   meditationstatus: {
     fontSize: 20,
     textAlign: 'center',
     color: '#A5A5A5',
     margin: 10,
+    top: 60,
   },
   timer: {
-    fontSize: 60,
+    fontSize: 80,
     textAlign: 'center',
     color: '#A5A5A5',
     margin: 10,
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#ffffff',
-    marginBottom: 5,
-  },
+  button: {
+    bottom: 60,
+  }
 });
 
 AppRegistry.registerComponent('sitting', () => sitting);
