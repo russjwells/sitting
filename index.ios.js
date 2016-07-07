@@ -4,7 +4,8 @@ import {
   StyleSheet,
   Text,
   View,
-  Image
+  Image,
+  StatusBar,
 } from 'react-native';
 
 import Drawer from 'react-native-drawer'
@@ -13,6 +14,10 @@ class sitting extends Component {
   render() {
     return (
       <View style={styles.container}>
+      <StatusBar
+         //backgroundColor="blue"
+         barStyle="light-content"
+      />
         <View style={styles.topbar}>
           <View style={styles.drawericon}>
             <Image source={require('./app/img/sandwichdrawericon.png')} />
