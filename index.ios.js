@@ -8,14 +8,16 @@ import {
   StatusBar,
 } from 'react-native';
 
-import Drawer from 'react-native-drawer'
+import Timer from './app/components/Timer';
+import Button from './app/components/Button';
+
+import Drawer from 'react-native-drawer';
 
 class sitting extends Component {
   render() {
     return (
       <View style={styles.container}>
       <StatusBar
-         //backgroundColor="blue"
          barStyle="light-content"
       />
         <View style={styles.topbar}>
@@ -31,9 +33,11 @@ class sitting extends Component {
             BEGIN MEDITATION
           </Text>
           <Text style={styles.timer}>
-            20:00
+            <Timer></Timer>
           </Text>
-          <Image style={styles.button} source={require('./app/img/multidimensionalmeditator.png')} />
+          <View style={styles.button}>
+            <Button  />
+          </View>
         </View>
       </View>
     );
