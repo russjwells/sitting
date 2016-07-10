@@ -8,8 +8,7 @@ import {
   StatusBar,
 } from 'react-native';
 
-import Timer from './app/components/Timer';
-import Button from './app/components/Button';
+import MeditationView from './app/MeditationView';
 
 import Drawer from 'react-native-drawer';
 
@@ -17,9 +16,9 @@ class sitting extends Component {
   render() {
     return (
       <View style={styles.container}>
-      <StatusBar
-         barStyle="light-content"
-      />
+        <StatusBar
+           barStyle="light-content"
+        />
         <View style={styles.topbar}>
           <View style={styles.drawericon}>
             <Image source={require('./app/img/sandwichdrawericon.png')} />
@@ -28,17 +27,7 @@ class sitting extends Component {
             <Image source={require('./app/img/sittingtitle.png')} />
           </View>
         </View>
-        <View style={styles.bodyarea}>
-          <Text style={styles.meditationstatus}>
-            BEGIN MEDITATION
-          </Text>
-          <Text style={styles.timer}>
-            <Timer></Timer>
-          </Text>
-          <View style={styles.button}>
-            <Button  />
-          </View>
-        </View>
+        <MeditationView />
       </View>
     );
   }
@@ -66,32 +55,6 @@ const styles = StyleSheet.create({
   apptitle: {
     left: 95,
     top: 30,
-  },
-  bodyarea: {
-    flex: 1,
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    backgroundColor: '#484848',
-  },
-  meditationstatus: {
-    fontSize: 20,
-    textAlign: 'center',
-    fontFamily: 'AvantGarde Md BT',
-    color: '#A5A5A5',
-    margin: 10,
-    top: 60,
-  },
-  timer: {
-    fontSize: 80,
-    fontFamily: 'AvantGarde Md BT',
-    textAlign: 'center',
-    color: '#A5A5A5',
-    margin: 10,
-    marginBottom: 60,
-  },
-  button: {
-    bottom: 60,
   }
 });
 

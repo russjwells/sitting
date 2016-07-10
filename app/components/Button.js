@@ -3,6 +3,8 @@ import {Image, TouchableWithoutFeedback} from 'react-native';
 
 let timerLength = 20;
 
+let imgURL = '.././img/multidimensionalmeditator.png';
+
 class Button extends React.Component {
   constructor(props) {
     super(props);
