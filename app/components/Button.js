@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Image, TouchableWithoutFeedback} from 'react-native';
+import {Image, TouchableWithoutFeedback, StyleSheet, View} from 'react-native';
 
 let timerLength = 20;
 
@@ -14,14 +14,21 @@ class Button extends React.Component {
     console.log("You tapped the button!");
   }
 
-
   render() {
     return (
-      <TouchableWithoutFeedback onPress={this._onPressButton}>
-        <Image source={require('.././img/multidimensionalmeditator.png')} />
-      </TouchableWithoutFeedback>
+      <View style={styles.button}>
+        <TouchableWithoutFeedback onPress={this._onPressButton}>
+          <Image source={require('.././img/multidimensionalmeditator.png')} />
+        </TouchableWithoutFeedback>
+      </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  button: {
+    bottom: 60,
+  }
+});
 
 export default Button;

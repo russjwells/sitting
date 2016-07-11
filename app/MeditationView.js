@@ -8,20 +8,15 @@ import {
 
 import Timer from './components/Timer';
 import Button from './components/Button';
+import MessageDisplay from './components/MessageDisplay';
 
 class MeditationView extends Component {
   render() {
     return (
         <View style={styles.bodyarea}>
-          <Text style={styles.meditationstatus}>
-            BEGIN MEDITATION
-          </Text>
-          <Text style={styles.timer}>
-            <Timer />
-          </Text>
-          <View style={styles.button}>
-            <Button  />
-          </View>
+          <MessageDisplay />
+          <Timer />
+          <Button  />
         </View>
     );
   }
@@ -34,14 +29,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     backgroundColor: '#484848',
-  },
-  meditationstatus: {
-    fontSize: 20,
-    textAlign: 'center',
-    fontFamily: 'AvantGarde Md BT',
-    color: '#A5A5A5',
-    margin: 10,
-    top: 60,
   },
   timer: {
     fontSize: 80,
