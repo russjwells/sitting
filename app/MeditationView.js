@@ -11,12 +11,26 @@ import Button from './components/Button';
 import MessageDisplay from './components/MessageDisplay';
 
 class MeditationView extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      timerOn: false,
+      num: 20,
+    };
+    let defaultTime = 20;
+    let defaultPrepTime = 30;
+  }
+  handleButtonClick(){
+    this.setState('num', this.state.num+1);
+    console.log("btn click handled!");
+  }
   render() {
     return (
         <View style={styles.bodyarea}>
           <MessageDisplay />
           <Timer />
-          <Button  />
+          <Button onClick={this.handleButtonClick.bind(this)}/>
         </View>
     );
   }

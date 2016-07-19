@@ -1,16 +1,27 @@
 import React, { Component } from 'react';
 import {Text, StyleSheet} from 'react-native';
 
-let timerLength = 20;
-
 class Timer extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      timing: false,
+      hours: 0,
+      minutes: 20,
+      seconds: 0,
+    }
   }
+  componentDidMount(){
+
+  }
+
+  minusSecond() {
+
+  };
 
   render() {
     return (
-      <Text style={styles.timer}>{timerLength}</Text>
+      <Text style={styles.timer}>{this.state.minutes}</Text>
     );
   }
 }

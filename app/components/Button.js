@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import {Image, TouchableWithoutFeedback, StyleSheet, View} from 'react-native';
 
-let timerLength = 20;
-
 let imgURL = '.././img/multidimensionalmeditator.png';
 
 class Button extends React.Component {
