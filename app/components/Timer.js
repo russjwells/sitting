@@ -1,27 +1,44 @@
 import React, { Component } from 'react';
 import {Text, StyleSheet} from 'react-native';
+import {Alert} from 'react-native';
 
 class Timer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       timing: false,
+      ready: true,
+      paused: false,
+      finished: false,
       hours: 0,
       minutes: 20,
       seconds: 0,
     }
+
+    setInterval(() => {
+      this.setState({ seconds: this.state.seconds-- });
+    }, 1000);
   }
   componentDidMount(){
-
+    Alert.alert("Welcome to Meditation. Please have a seat and get comfortable.")
   }
 
   minusSecond() {
 
   };
+  start() {
+
+  };
+  stop() {
+
+  };
+  reset() {
+
+  };
 
   render() {
     return (
-      <Text style={styles.timer}>{this.state.minutes}</Text>
+      <Text style={styles.timer}>{this.state.minutes + ':' + this.state.seconds}</Text>
     );
   }
 }

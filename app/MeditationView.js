@@ -23,14 +23,14 @@ class MeditationView extends Component {
   }
   handleButtonClick(){
     this.setState('num', this.state.num+1);
-    console.log("btn click handled!");
+    console.log("btn click handled: "+this.state.num);
   }
   render() {
     return (
         <View style={styles.bodyarea}>
           <MessageDisplay />
           <Timer />
-          <Button onClick={this.handleButtonClick.bind(this)}/>
+          <Button onPress={this.handleButtonClick.bind(this)}/>
         </View>
     );
   }

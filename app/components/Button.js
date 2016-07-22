@@ -1,23 +1,30 @@
 import React, { Component } from 'react';
-import {Image, TouchableWithoutFeedback, StyleSheet, View} from 'react-native';
+import {Image, TouchableWithoutFeedback, TouchableOpacity, StyleSheet, View} from 'react-native';
 
 let imgURL = '.././img/multidimensionalmeditator.png';
 
 class Button extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      pressed: false,
+    };
   }
 
   _onPressButton() {
-    console.log("You tapped the button!");
+    console.log("You pressed the button!");
+
+  }
+  _onReleaseButton() {
+    console.log("You released the button!");
   }
 
   render() {
     return (
       <View style={styles.button}>
-        <TouchableWithoutFeedback onPress={this._onPressButton}>
+        <TouchableOpacity onPress={this._onPressButton} onRelease={this._onReleaseButton}>
           <Image source={require('.././img/multidimensionalmeditator.png')} />
-        </TouchableWithoutFeedback>
+        </TouchableOpacity>
       </View>
     );
   }
