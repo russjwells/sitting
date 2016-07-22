@@ -6,6 +6,8 @@ import {
   View,
   Image,
   StatusBar,
+  TouchableOpacity,
+  Alert,
 } from 'react-native';
 
 import MeditationView from './app/MeditationView';
@@ -20,9 +22,11 @@ class sitting extends Component {
            barStyle="light-content"
         />
         <View style={styles.topbar}>
+        <TouchableOpacity>
           <View style={styles.drawericon}>
             <Image source={require('./app/img/sandwichdrawericon.png')} />
           </View>
+        </TouchableOpacity>
           <View style={styles.apptitle}>
             <Image source={require('./app/img/sittingtitle.png')} />
           </View>
