@@ -12,15 +12,24 @@ class Timer extends React.Component {
       finished: false,
       hours: 0,
       minutes: 20,
-      seconds: 0,
+      seconds: 20,
     }
 
     setInterval(() => {
-      this.setState({ seconds: this.state.seconds-- });
+      this.setState({ seconds: this.state.seconds-1 });
+      console.log("seconds: "+ this.state.seconds);
     }, 1000);
   }
   componentDidMount(){
     Alert.alert("Welcome to Meditation. Please have a seat and get comfortable.")
+  }
+
+  leftPad(){
+
+  }
+
+  componentDidUnMount() {
+
   }
 
   minusSecond() {

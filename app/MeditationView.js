@@ -22,15 +22,16 @@ class MeditationView extends Component {
     let defaultPrepTime = 30;
   }
   handleButtonClick(){
-    this.setState('num', this.state.num+1);
-    console.log("btn click handled: "+this.state.num);
+    this.setState({'num': this.state.num+1});
+    console.log("btn click handled: "+ this.state.num);
+    console.log("numlog:" + this.state.num);
   }
   render() {
     return (
         <View style={styles.bodyarea}>
           <MessageDisplay />
           <Timer />
-          <Button onPress={this.handleButtonClick.bind(this)}/>
+          <Button onPress={this.handleButtonClick.bind(this) }/>
         </View>
     );
   }

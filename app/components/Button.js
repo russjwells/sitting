@@ -13,6 +13,7 @@ class Button extends React.Component {
 
   _onPressButton() {
     console.log("You pressed the button!");
+    this.props.onPress();
 
   }
   _onReleaseButton() {
@@ -22,7 +23,7 @@ class Button extends React.Component {
   render() {
     return (
       <View style={styles.button}>
-        <TouchableOpacity onPress={this._onPressButton} onRelease={this._onReleaseButton}>
+        <TouchableOpacity onPress={this._onPressButton.bind(this)} onRelease={this._onReleaseButton}>
           <Image source={require('.././img/multidimensionalmeditator.png')} />
         </TouchableOpacity>
       </View>
