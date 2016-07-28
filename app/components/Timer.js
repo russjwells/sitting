@@ -6,10 +6,8 @@ class Timer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      timing: false,
-      ready: true,
-      paused: false,
-      finished: false,
+      //Beginning Running Finished Paused
+      appState: "",
       hours: 0,
       minutes: 20,
       seconds: 20,
@@ -29,7 +27,7 @@ class Timer extends React.Component {
   }
 
   componentDidMount(){
-    
+
   }
   pause(){
 

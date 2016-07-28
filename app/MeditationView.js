@@ -4,6 +4,7 @@ import {
   Text,
   View,
   Image,
+  Alert,
 } from 'react-native';
 
 import Timer from './components/Timer';
@@ -26,7 +27,7 @@ class MeditationView extends Component {
     super(props);
     this.state = {
       //Begining Running Finished and Paused
-      appState: "Begining",
+      appState: "Beginning",
       timerOn: false,
       num: 20,
     };
@@ -34,6 +35,23 @@ class MeditationView extends Component {
     let defaultPrepTime = 30;
   }
   handleButtonClick(){
+    //Action Tree
+    if (this.state.appState == "Beginning"){
+      Alert.alert("Beginning")
+      this.setState({appState: "Running"});
+    }else if(this.state.appState == "Running"){
+      Alert.alert("Running")
+      this.setState({appState: "Paused"});
+    }else if(this.state.appState == "Paused"){
+      Alert.alert("Paused")
+      this.setState({appState: "Running"});
+
+    }else if(this.state.appState == "Finished"){
+      Alert.alert("Finished")
+      this.setState({appState: "Beginning"});
+    }else{
+      Alert.alert("What!?")
+    }
     this.setState({'num': this.state.num+1});
     console.log("btn click handled: "+ this.state.num);
     console.log("numlog:" + this.state.num);

@@ -37,7 +37,7 @@ class sitting extends Component {
   }
 
   handleDrawerButtonClick(e){
-    Alert.alert("Welcome to Meditation. Please have a seat and get comfortable.")
+    Alert.alert("Settings coming soon!")
   }
 }
 

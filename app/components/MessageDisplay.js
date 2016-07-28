@@ -8,13 +8,15 @@ import {
 class MessageDisplay extends React.Component {
   constructor(props) {
     super(props);
-    let currentMessage = "Welcome to Meditation. Please have a seat and get comfortable.";
+    this.state = {
+      message: "Welcome to Meditation. \n Please have a seat and get comfortable.",
+    }
   }
 
-  render(currentMessage) {
+  render() {
     return (
       <Text style={styles.meditationstatus}>
-        {currentMessage}
+        {this.state.message}
       </Text>
     );
   }
