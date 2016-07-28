@@ -22,7 +22,7 @@ class sitting extends Component {
            barStyle="light-content"
         />
         <View style={styles.topbar}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={this.handleDrawerButtonClick.bind(this) }>
           <View style={styles.drawericon}>
             <Image source={require('./app/img/sandwichdrawericon.png')} />
           </View>
@@ -31,9 +31,13 @@ class sitting extends Component {
             <Image source={require('./app/img/sittingtitle.png')} />
           </View>
         </View>
-        <MeditationView />
+        <MeditationView appState="Beginning"/>
       </View>
     );
+  }
+
+  handleDrawerButtonClick(e){
+    Alert.alert("Welcome to Meditation. Please have a seat and get comfortable.")
   }
 }
 

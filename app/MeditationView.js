@@ -25,6 +25,8 @@ class MeditationView extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      //Begining Running Finished and Paused
+      appState: "Begining",
       timerOn: false,
       num: 20,
     };

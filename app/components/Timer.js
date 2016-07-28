@@ -29,7 +29,7 @@ class Timer extends React.Component {
   }
 
   componentDidMount(){
-    Alert.alert("Welcome to Meditation. Please have a seat and get comfortable.")
+    
   }
   pause(){
 
