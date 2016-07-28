@@ -9,6 +9,16 @@ import {
 import Timer from './components/Timer';
 import Button from './components/Button';
 import MessageDisplay from './components/MessageDisplay';
+var Sound = require('react-native-sound');
+
+var bowlding = new Sound('bowlsounds.wav', Sound.MAIN_BUNDLE, (error) => {
+  if (error) {
+    console.log('failed to load the sound', error);
+  } else { // loaded successfully
+    console.log('duration in seconds: ' + bowlding.getDuration() +
+        'number of channels: ' + bowlding.getNumberOfChannels());
+  }
+});
 
 class MeditationView extends Component {
 
@@ -25,6 +35,14 @@ class MeditationView extends Component {
     this.setState({'num': this.state.num+1});
     console.log("btn click handled: "+ this.state.num);
     console.log("numlog:" + this.state.num);
+    // Play the sound with an onEnd callback
+    bowlding.play((success) => {
+      if (success) {
+        console.log('successfully finished playing');
+      } else {
+        console.log('playback failed due to audio decoding errors');
+      }
+    });
   }
   render() {
     return (

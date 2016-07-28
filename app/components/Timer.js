@@ -14,20 +14,43 @@ class Timer extends React.Component {
       minutes: 20,
       seconds: 20,
     }
-
     setInterval(() => {
       this.setState({ seconds: this.state.seconds-1 });
-      console.log("seconds: "+ this.state.seconds);
+      if (this.state.seconds==0){
+        if(this.state.minutes>0){
+          this.setState({ minutes: this.state.minutes-1 });
+          this.setState({ seconds: 59 });
+        }else{
+          finish();
+        }
+
+      }
     }, 1000);
   }
+
   componentDidMount(){
     Alert.alert("Welcome to Meditation. Please have a seat and get comfortable.")
+  }
+  pause(){
+
+  }
+  finish(){
+    this.setState({ finished: true });
+    this.setState({ timing: false });
+    clearInterval(() => {
+
+    })
   }
 
   leftPad(){
 
   }
 
+  pad(n, width, z) {
+    z = z || '0';
+    n = n + '';
+    return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+  }
   componentDidUnMount() {
 
   }
@@ -45,12 +68,15 @@ class Timer extends React.Component {
 
   };
 
-  render() {
+  render(pad) {
+    let outputSeconds
+    //outputSeconds = pad(this.state.seconds,2);
     return (
       <Text style={styles.timer}>{this.state.minutes + ':' + this.state.seconds}</Text>
     );
   }
 }
+
 const styles = StyleSheet.create({
   timer: {
     fontSize: 80,
@@ -61,4 +87,5 @@ const styles = StyleSheet.create({
     marginBottom: 60,
   },
 });
+
 export default Timer;
