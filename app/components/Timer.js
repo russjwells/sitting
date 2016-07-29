@@ -50,6 +50,9 @@ class Timer extends React.Component {
 
     })
   }
+  componentWillReceiveProps(nextProps){
+    
+  }
 
   minusSecond() {
 
@@ -65,7 +68,7 @@ class Timer extends React.Component {
   };
 
   render(pad) {
-    let outputSeconds
+    //let outputSeconds
     //outputSeconds = pad(this.state.seconds,2);
     return (
       <Text style={styles.timer}>{this.state.minutes + ':' + this.state.seconds}</Text>
