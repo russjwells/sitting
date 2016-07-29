@@ -12,7 +12,16 @@ import Button from './components/Button';
 import MessageDisplay from './components/MessageDisplay';
 var Sound = require('react-native-sound');
 
-var bowlding = new Sound('bowlsounds.wav', Sound.MAIN_BUNDLE, (error) => {
+var threebowlring = new Sound('3bowlsounds.wav', Sound.MAIN_BUNDLE, (error) => {
+  if (error) {
+    console.log('failed to load the sound', error);
+  } else { // loaded successfully
+    console.log('duration in seconds: ' + bowlding.getDuration() +
+        'number of channels: ' + bowlding.getNumberOfChannels());
+  }
+});
+
+var singingbowlring = new Sound('singingbowlring.wav', Sound.MAIN_BUNDLE, (error) => {
   if (error) {
     console.log('failed to load the sound', error);
   } else { // loaded successfully
@@ -35,46 +44,48 @@ class MeditationView extends Component {
     let defaultPrepTime = 30;
   }
   componentDidMount(){
-    //Alert.alert(this.state.appState);
+    Alert.alert("view mount state: "+this.state.appState);
   }
   handleButtonClick(){
     //Action Tree
     if (this.state.appState == "Beginning"){
-      //Alert.alert("Beginning")
       this.setState({appState: "Running"});
     }else if(this.state.appState == "Running"){
-      //Alert.alert("Running")
       this.setState({appState: "Paused"});
     }else if(this.state.appState == "Paused"){
-      //Alert.alert("Paused")
       this.setState({appState: "Running"});
     }else if(this.state.appState == "Finished"){
-      //Alert.alert("Finished")
       this.setState({appState: "Beginning"});
     }else{
       Alert.alert("What!?")
     }
-
-
-
   }
   complete() {
     // Play the sound with an onEnd callback
-    bowlding.play((success) => {
+    threebowlring.play((success) => {
       if (success) {
         console.log('successfully finished playing');
       } else {
         console.log('playback failed due to audio decoding errors');
       }
     });
-    //Alert.alert("Meditation Complete!!!!")
+    this.setState({appState: "Finished"});
+  }
+  halfway() {
+    singingbowlring.play((success) => {
+      if (success) {
+        console.log('successfully finished playing');
+      } else {
+        console.log('playback failed due to audio decoding errors');
+      }
+    });
     this.setState({appState: "Finished"});
   }
   render() {
     return (
         <View style={styles.bodyarea}>
           <MessageDisplay appState={this.state.appState} />
-          <Timer appState={this.state.appState} completeFunction={this.complete} />
+          <Timer appState={this.state.appState} completeFunction={this.complete} halfwayFunction={this.halfway}/>
           <Button appState={this.state.appState} onPress={this.handleButtonClick.bind(this) }/>
         </View>
     );

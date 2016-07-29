@@ -23,7 +23,6 @@ class Timer extends React.Component {
             this.setState({ seconds: 59 });
           }else{
             //time ended
-
             this.props.completeFunction();
             complete(this);
           }
@@ -55,19 +54,8 @@ class Timer extends React.Component {
       complete(this)
     }
   }
-
   render() {
-    /*
-    let outSec = this.state.seconds
-    let outMin = this.state.minutes
-    if (hideInterval){
-      outSec = pausedSec;
-      outMin = pausedMin;
-    }
-    */
-    //outputSeconds = pad(this.state.seconds,2);
     return (
-      //<Text style={styles.timer}>{outMin + ':' + outSec}</Text>
       <Text style={styles.timer}>{pad(this.state.minutes,2) + ':' + pad(this.state.seconds, 2)}</Text>
     );
   }

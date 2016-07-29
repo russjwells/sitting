@@ -25,6 +25,8 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		D2B07F7A1D49CA7300FD7B4E /* libRNSound.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B07F791D49C96F00FD7B4E /* libRNSound.a */; };
 		D2B07F7C1D49CAC300FD7B4E /* bowlsounds.wav in Resources */ = {isa = PBXBuildFile; fileRef = D2B07F7B1D49CAC300FD7B4E /* bowlsounds.wav */; };
+		D2B07F7F1D4BD59A00FD7B4E /* 3bowlsounds.wav in Resources */ = {isa = PBXBuildFile; fileRef = D2B07F7D1D4BD59A00FD7B4E /* 3bowlsounds.wav */; };
+		D2B07F801D4BD59A00FD7B4E /* singingbowlring.wav in Resources */ = {isa = PBXBuildFile; fileRef = D2B07F7E1D4BD59A00FD7B4E /* singingbowlring.wav */; };
 		D2CC0E721D2E266200F2288D /* AVGARDM.TTF in Resources */ = {isa = PBXBuildFile; fileRef = D2CC0E701D2E266200F2288D /* AVGARDM.TTF */; };
 		D2CC0E731D2E266200F2288D /* AVGARDMI.TTF in Resources */ = {isa = PBXBuildFile; fileRef = D2CC0E711D2E266200F2288D /* AVGARDMI.TTF */; };
 /* End PBXBuildFile section */
@@ -140,6 +142,8 @@
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		D2B07F6A1D49C96F00FD7B4E /* RNSound.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNSound.xcodeproj; path = "../node_modules/react-native-sound/RNSound.xcodeproj"; sourceTree = "<group>"; };
 		D2B07F7B1D49CAC300FD7B4E /* bowlsounds.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bowlsounds.wav; sourceTree = "<group>"; };
+		D2B07F7D1D4BD59A00FD7B4E /* 3bowlsounds.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3bowlsounds.wav; sourceTree = "<group>"; };
+		D2B07F7E1D4BD59A00FD7B4E /* singingbowlring.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = singingbowlring.wav; sourceTree = "<group>"; };
 		D2CC0E701D2E266200F2288D /* AVGARDM.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = AVGARDM.TTF; sourceTree = "<group>"; };
 		D2CC0E711D2E266200F2288D /* AVGARDMI.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = AVGARDMI.TTF; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -251,6 +255,8 @@
 			isa = PBXGroup;
 			children = (
 				D2B07F7B1D49CAC300FD7B4E /* bowlsounds.wav */,
+				D2B07F7D1D4BD59A00FD7B4E /* 3bowlsounds.wav */,
+				D2B07F7E1D4BD59A00FD7B4E /* singingbowlring.wav */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -549,10 +555,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2B07F801D4BD59A00FD7B4E /* singingbowlring.wav in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				D2B07F7C1D49CAC300FD7B4E /* bowlsounds.wav in Resources */,
 				D2CC0E721D2E266200F2288D /* AVGARDM.TTF in Resources */,
+				D2B07F7F1D4BD59A00FD7B4E /* 3bowlsounds.wav in Resources */,
 				D2CC0E731D2E266200F2288D /* AVGARDMI.TTF in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
