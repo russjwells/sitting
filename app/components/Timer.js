@@ -12,7 +12,10 @@ class Timer extends React.Component {
       minutes: 20,
       seconds: 20,
     }
-    setInterval(() => {
+  }
+
+  componentDidMount(){
+    this.interval = setInterval(() => {
       this.setState({ seconds: this.state.seconds-1 });
       if (this.state.seconds==0){
         if(this.state.minutes>0){
@@ -21,13 +24,8 @@ class Timer extends React.Component {
         }else{
           finish();
         }
-
       }
     }, 1000);
-  }
-
-  componentDidMount(){
-    
   }
   pause(){
 
@@ -35,9 +33,7 @@ class Timer extends React.Component {
   finish(){
     this.setState({ finished: true });
     this.setState({ timing: false });
-    clearInterval(() => {
 
-    })
   }
 
   leftPad(){
@@ -50,7 +46,9 @@ class Timer extends React.Component {
     return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
   }
   componentDidUnMount() {
+    this.interval = clearInterval(() => {
 
+    })
   }
 
   minusSecond() {
