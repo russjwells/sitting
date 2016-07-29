@@ -14,7 +14,6 @@ class Button extends React.Component {
   _onPressButton() {
     console.log("You pressed the button!");
     this.props.onPress();
-
   }
   _onReleaseButton() {
     console.log("You released the button!");

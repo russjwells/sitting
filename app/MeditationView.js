@@ -34,6 +34,9 @@ class MeditationView extends Component {
     let defaultTime = 20;
     let defaultPrepTime = 30;
   }
+  componentDidMount(){
+    //Alert.alert(this.state.appState);
+  }
   handleButtonClick(){
     //Action Tree
     if (this.state.appState == "Beginning"){
@@ -52,6 +55,10 @@ class MeditationView extends Component {
       Alert.alert("What!?")
     }
 
+
+
+  }
+  complete() {
     // Play the sound with an onEnd callback
     bowlding.play((success) => {
       if (success) {
@@ -60,12 +67,14 @@ class MeditationView extends Component {
         console.log('playback failed due to audio decoding errors');
       }
     });
+    //Alert.alert("Meditation Complete!!!!")
+    this.setState({appState: "Finished"});
   }
   render() {
     return (
         <View style={styles.bodyarea}>
           <MessageDisplay appState={this.state.appState} />
-          <Timer appState={this.state.appState} />
+          <Timer appState={this.state.appState} completeFunction={this.complete} />
           <Button appState={this.state.appState} onPress={this.handleButtonClick.bind(this) }/>
         </View>
     );
