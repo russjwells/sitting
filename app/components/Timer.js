@@ -75,23 +75,6 @@ class Timer extends React.Component {
     }
   }
 
-  pause() {
-    isPaused = true;
-    pausedMin = this.getState({minutes});
-    pausedSec = this.getState({seconds});
-  };
-  start() {
-    if (isPaused){
-      isPaused = false;
-    }
-  };
-  stop() {
-
-  };
-  reset() {
-
-  };
-
   render() {
     let outSec = this.state.seconds
     let outMin = this.state.minutes
@@ -101,10 +84,29 @@ class Timer extends React.Component {
     }
     //outputSeconds = pad(this.state.seconds,2);
     return (
-      <Text style={styles.timer}>{outMin + ':' + outSec}</Text>
+      //<Text style={styles.timer}>{outMin + ':' + outSec}</Text>
+      <Text style={styles.timer}>{this.state.minutes + ':' + this.state.seconds}</Text>
     );
   }
 }
+
+function pause(){
+  isPaused = true;
+  pausedMin = this.getState({minutes});
+  pausedSec = this.getState({seconds});
+};
+function start() {
+  if (isPaused){
+    isPaused = false;
+  }
+};
+function stop() {
+
+};
+function reset() {
+
+};
+
 var isPaused = true;
 var pausedMin;
 var pausedSec;
