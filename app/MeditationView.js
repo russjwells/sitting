@@ -12,15 +12,6 @@ import Button from './components/Button';
 import MessageDisplay from './components/MessageDisplay';
 var Sound = require('react-native-sound');
 
-var threebowlring = new Sound('3bowlsounds.wav', Sound.MAIN_BUNDLE, (error) => {
-  if (error) {
-    console.log('failed to load the sound', error);
-  } else { // loaded successfully
-    console.log('duration in seconds: ' + threebowlring.getDuration() +
-        'number of channels: ' + threebowlring.getNumberOfChannels());
-  }
-});
-
 var singingbowlring = new Sound('singingbowlring.wav', Sound.MAIN_BUNDLE, (error) => {
   if (error) {
     console.log('failed to load the sound', error);
@@ -44,7 +35,7 @@ class MeditationView extends Component {
     let defaultPrepTime = 30;
   }
   componentDidMount(){
-    Alert.alert("view mount state: "+this.state.appState);
+    
   }
   handleButtonClick(){
     //Action Tree
@@ -65,7 +56,7 @@ class MeditationView extends Component {
   }
   complete() {
     // Play the sound with an onEnd callback
-    threebowlring.play((success) => {
+    singingbowlring.play((success) => {
       if (success) {
         console.log('successfully finished playing');
       } else {

@@ -11,7 +11,6 @@ import {
 } from 'react-native';
 
 import MeditationView from './app/MeditationView';
-
 import Drawer from 'react-native-drawer';
 
 class sitting extends Component {

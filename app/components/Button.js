@@ -8,7 +8,6 @@ class Button extends React.Component {
     super(props);
     this.state = {
       appState: this.props.appState,
-      pressed: false,
     };
   }
 
@@ -16,14 +15,11 @@ class Button extends React.Component {
     console.log("You pressed the button!");
     this.props.onPress();
   }
-  _onReleaseButton() {
-    console.log("You released the button!");
-  }
 
   render() {
     return (
       <View style={styles.button}>
-        <TouchableOpacity onPress={this._onPressButton.bind(this)} onRelease={this._onReleaseButton}>
+        <TouchableOpacity onPress={this._onPressButton.bind(this)} >
           <Image source={require('.././img/multidimensionalmeditator.png')} />
         </TouchableOpacity>
       </View>

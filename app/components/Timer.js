@@ -15,7 +15,7 @@ class Timer extends React.Component {
   }
   componentDidMount(){
     this.interval = setInterval(() => {
-      if (!hideInterval){
+      if (!paused){
         this.setState({ seconds: this.state.seconds-1 });
         if (this.state.seconds==0){
           if(this.state.minutes>0){
@@ -24,9 +24,10 @@ class Timer extends React.Component {
           }else{
             //time ended
             this.props.completeFunction();
-            complete(this);
           }
         }
+      }else{
+        console.log("paused")
       }
     }, 1000);
   }
@@ -62,17 +63,17 @@ class Timer extends React.Component {
 }
 
 function pause(timer){
-  hideInterval = true;
+  paused = true;
   pausedMin = timer.state.minutes;
   pausedSec = timer.state.seconds;
 };
 function start(timer) {
-  if (hideInterval){
-    hideInterval = false;
+  if (paused){
+    paused = false;
   }
 };
 function stop(timer) {
-  hideInterval = true;
+  paused = true;
   timer.setState({minutes: 0});
   timer.setState({seconds: 0});
 };
@@ -80,7 +81,7 @@ function reset(timer) {
 
 };
 function complete(timer){
-  hideInterval = true;
+  paused = true;
   timer.setState({minutes: 20});
   timer.setState({seconds: 20});
 }
@@ -90,7 +91,7 @@ function pad(n, width, z) {
   return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
 }
 
-var hideInterval = true;
+var paused = true;
 var pausedMin;
 var pausedSec;
 var timerMapper = {
