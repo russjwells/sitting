@@ -13,7 +13,7 @@ class MessageDisplay extends React.Component {
     }
   }
   componentWillReceiveProps(nextProps){
-
+/*
     if(this.props.appState == "Beginning"){
       this.setState({message: "Welcome to Meditation. \n Please have a seat and get comfortable."})
     }
@@ -27,18 +27,26 @@ class MessageDisplay extends React.Component {
       this.setState({message: "Mediation complete."})
     }
 
+*/
   }
 
   render() {
+    var message = messageMapper[this.props.appState];
     return (
       <Text style={styles.meditationstatus}>
-        {this.state.message}
-
+        {message}
       </Text>
     );
   }
 
 }
+
+var messageMapper = {
+'Beginning': 'Welcome to Meditation',
+'Running': 'Meditation in Progress',
+'Paused' : 'Meditation Paused',
+'Finished' : 'Meditation Complete',
+};
 
 const styles = StyleSheet.create({
   meditationstatus: {

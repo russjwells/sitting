@@ -45,7 +45,6 @@ class MeditationView extends Component {
     }else if(this.state.appState == "Paused"){
       //Alert.alert("Paused")
       this.setState({appState: "Running"});
-
     }else if(this.state.appState == "Finished"){
       //Alert.alert("Finished")
       this.setState({appState: "Beginning"});

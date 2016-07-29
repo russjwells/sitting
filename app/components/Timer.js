@@ -27,6 +27,16 @@ class Timer extends React.Component {
       }
     }, 1000);
   }
+  reset(){
+    setState({
+      hours: 0,
+      minutes: 20,
+      seconds: 0,
+    })
+  }
+  start(){
+
+  }
   pause(){
 
   }
@@ -51,14 +61,29 @@ class Timer extends React.Component {
     })
   }
   componentWillReceiveProps(nextProps){
-    
+    if(this.props.appState == "Beginning"){
+      reset()
+    }
+    if(this.props.appState == "Running"){
+      start()
+    }
+    if(this.props.appState == "Paused"){
+      pause()
+    }
+    if(this.props.appState == "Finished"){
+      finish()
+    }
   }
 
-  minusSecond() {
-
+  pause() {
+    isPaused = true;
+    pausedMin = this.getState({minutes});
+    pausedSec = this.getState({seconds});
   };
   start() {
-
+    if (isPaused){
+      isPaused = false;
+    }
   };
   stop() {
 
@@ -67,13 +92,27 @@ class Timer extends React.Component {
 
   };
 
-  render(pad) {
-    //let outputSeconds
+  render() {
+    let outSec = this.state.seconds
+    let outMin = this.state.minutes
+    if (isPaused){
+      outSec = pausedSec;
+      outMin = pausedMin;
+    }
     //outputSeconds = pad(this.state.seconds,2);
     return (
-      <Text style={styles.timer}>{this.state.minutes + ':' + this.state.seconds}</Text>
+      <Text style={styles.timer}>{outMin + ':' + outSec}</Text>
     );
   }
+}
+var isPaused = true;
+var pausedMin;
+var pausedSec;
+var timerMapper = {
+  'Beginning': 'Welcome to Meditation',
+  'Running': 'Meditation in Progress',
+  'Paused' : 'Meditation Paused',
+  'Finished' : 'Meditation Complete',
 }
 
 const styles = StyleSheet.create({
