@@ -37,24 +37,22 @@ class MeditationView extends Component {
   handleButtonClick(){
     //Action Tree
     if (this.state.appState == "Beginning"){
-      Alert.alert("Beginning")
+      //Alert.alert("Beginning")
       this.setState({appState: "Running"});
     }else if(this.state.appState == "Running"){
-      Alert.alert("Running")
+      //Alert.alert("Running")
       this.setState({appState: "Paused"});
     }else if(this.state.appState == "Paused"){
-      Alert.alert("Paused")
+      //Alert.alert("Paused")
       this.setState({appState: "Running"});
 
     }else if(this.state.appState == "Finished"){
-      Alert.alert("Finished")
+      //Alert.alert("Finished")
       this.setState({appState: "Beginning"});
     }else{
       Alert.alert("What!?")
     }
-    this.setState({'num': this.state.num+1});
-    console.log("btn click handled: "+ this.state.num);
-    console.log("numlog:" + this.state.num);
+
     // Play the sound with an onEnd callback
     bowlding.play((success) => {
       if (success) {
@@ -67,9 +65,9 @@ class MeditationView extends Component {
   render() {
     return (
         <View style={styles.bodyarea}>
-          <MessageDisplay />
-          <Timer />
-          <Button onPress={this.handleButtonClick.bind(this) }/>
+          <MessageDisplay appState={this.state.appState} />
+          <Timer appState={this.state.appState} />
+          <Button appState={this.state.appState} onPress={this.handleButtonClick.bind(this) }/>
         </View>
     );
   }

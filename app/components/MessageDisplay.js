@@ -14,9 +14,25 @@ class MessageDisplay extends React.Component {
   }
 
   render() {
+    /*
+    if(this.props.appState == "Beginning"){
+      this.setState({message: "Welcome to Meditation. \n Please have a seat and get comfortable."})
+    }
+    if(this.props.appState == "Running"){
+      this.setState({message: "Mediation in progress..."})
+    }
+    if(this.props.appState == "Paused"){
+      this.setState({message: "Mediation paused."})
+    }
+    if(this.props.appState == "Finished"){
+      this.setState({message: "Mediation complete."})
+    }
+    */
+
     return (
       <Text style={styles.meditationstatus}>
-        {this.state.message}
+        {this.state.message + "\n" + this.props.appState}
+
       </Text>
     );
   }
