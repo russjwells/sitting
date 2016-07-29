@@ -8,6 +8,9 @@ import {
 class MessageDisplay extends React.Component {
   constructor(props) {
     super(props);
+    this.state= {
+      appState: this.props.appState,
+    }
   }
   componentWillReceiveProps(nextProps){
 
