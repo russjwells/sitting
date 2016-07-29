@@ -50,11 +50,6 @@ class Timer extends React.Component {
 
   }
 
-  pad(n, width, z) {
-    z = z || '0';
-    n = n + '';
-    return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
-  }
   componentDidUnMount() {
     this.interval = clearInterval(() => {
 
@@ -85,7 +80,7 @@ class Timer extends React.Component {
     //outputSeconds = pad(this.state.seconds,2);
     return (
       //<Text style={styles.timer}>{outMin + ':' + outSec}</Text>
-      <Text style={styles.timer}>{this.state.minutes + ':' + this.state.seconds}</Text>
+      <Text style={styles.timer}>{this.state.minutes + ':' + pad(this.state.seconds, 2)}</Text>
     );
   }
 }
@@ -106,6 +101,11 @@ function stop() {
 function reset() {
 
 };
+function pad(n, width, z) {
+  z = z || '0';
+  n = n + '';
+  return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+}
 
 var isPaused = true;
 var pausedMin;

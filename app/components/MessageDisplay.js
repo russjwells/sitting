@@ -38,7 +38,6 @@ class MessageDisplay extends React.Component {
       </Text>
     );
   }
-
 }
 
 var messageMapper = {
