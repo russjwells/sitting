@@ -35,9 +35,12 @@ class MeditationView extends Component {
     let defaultPrepTime = 30;
   }
   componentDidMount(){
-    
+
   }
   handleButtonClick(){
+
+    this.setState({appState: stateMapper[this.state.appState]});
+    /*
     //Action Tree
     if (this.state.appState == "Beginning"){
       this.setState({appState: "Running"});
@@ -50,6 +53,7 @@ class MeditationView extends Component {
     }else{
       Alert.alert("What!?")
     }
+    */
   }
   mutateAppState(stateName){
     this.setState({appState: stateName})
@@ -84,6 +88,13 @@ class MeditationView extends Component {
         </View>
     );
   }
+}
+
+var stateMapper = {
+  'Beginning' : 'Running',
+  'Running' : 'Paused',
+  'Paused' : 'Running',
+  'Finished' : 'Beginning',
 }
 
 const styles = StyleSheet.create({

@@ -17,7 +17,7 @@ class Timer extends React.Component {
     this.interval = setInterval(() => {
       if (!paused){
         this.setState({ seconds: this.state.seconds-1 });
-        if (this.state.seconds==0){
+        if (this.state.seconds<=0){
           if(this.state.minutes>0){
             this.setState({ minutes: this.state.minutes-1 });
             this.setState({ seconds: 59 });
@@ -27,23 +27,17 @@ class Timer extends React.Component {
           }
         }
       }else{
-        console.log("paused")
+
       }
+      console.log("| "+this.props.appState)
     }, 1000);
-  }
-  reset(){
-    setState({
-      hours: 0,
-      minutes: 20,
-      seconds: 0,
-    })
   }
   componentDidUnMount() {
     this.interval = clearInterval(() => {})
   }
   componentWillReceiveProps(nextProps){
     if(this.props.appState == "Beginning"){
-      reset(this)
+      //reset(this)
     }
     if(this.props.appState == "Running"){
       start(this)
@@ -78,7 +72,11 @@ function stop(timer) {
   timer.setState({seconds: 0});
 };
 function reset(timer) {
-
+  timer.setState({
+    hours: 0,
+    minutes: 20,
+    seconds: 0,
+  })
 };
 function complete(timer){
   paused = true;

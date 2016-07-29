@@ -27,10 +27,10 @@ class MessageDisplay extends React.Component {
 }
 
 var messageMapper = {
-'Beginning': 'Welcome to Meditation',
-'Running': 'Meditation in Progress',
-'Paused' : 'Meditation Paused',
-'Finished' : 'Meditation Complete',
+  'Beginning': 'Welcome to Meditation',
+  'Running': 'Meditation in Progress',
+  'Paused' : 'Meditation Paused',
+  'Finished' : 'Meditation Complete',
 };
 
 const styles = StyleSheet.create({
