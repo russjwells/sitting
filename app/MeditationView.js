@@ -5,6 +5,7 @@ import {
   View,
   Image,
   TouchableOpacity,
+  TouchableWithoutFeedback,
   Alert,
 } from 'react-native';
 
@@ -79,16 +80,16 @@ class MeditationView extends Component {
   }
   _onPressTime(){
     tminutes=tminutes+1;
-    Alert.alert("time touched: "+tminutes)
+    //Alert.alert("time touched: "+tminutes)
     //this.refs.Timer.userTime(tminutes,0)
   }
   render() {
     return (
         <View style={styles.bodyarea}>
           <MessageDisplay appState={this.state.appState} />
-          <TouchableOpacity onPress={this._onPressTime.bind(this)}>
+          <TouchableWithoutFeedback onPress={this._onPressTime.bind(this)}>
           <Timer appState={this.state.appState} defaultMinutes={tminutes} defaultSeconds={tseconds} completeFunction={this.complete.bind(this)} halfwayFunction={this.halfway.bind(this)} resetFunction={this.reset.bind(this)} />
-          </TouchableOpacity>
+          </TouchableWithoutFeedback>
           <Button appState={this.state.appState} onPress={this.handleButtonClick.bind(this) }/>
         </View>
     );
