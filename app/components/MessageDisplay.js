@@ -31,6 +31,7 @@ var messageMapper = {
   'Running': 'Meditation in Progress',
   'Paused' : 'Meditation Paused',
   'Finished' : 'Meditation Complete',
+  'Resetting' : 'Press to Reset'
 };
 
 const styles = StyleSheet.create({

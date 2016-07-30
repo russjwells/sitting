@@ -29,7 +29,6 @@ class MeditationView extends Component {
       //Begining Running Finished Paused and Resetting
       appState: "Beginning",
       timerOn: false,
-      num: 20,
       defaultMinutes: 0,
       defaultSeconds: 10,
     };
@@ -39,6 +38,9 @@ class MeditationView extends Component {
   }
   handleButtonClick(){
     this.setState({appState: stateMapper[this.state.appState]});
+  }
+  componentWillReceiveProps(nextProps){
+    
   }
   resetWithDefaults() {
 
@@ -79,7 +81,9 @@ var stateMapper = {
   'Beginning' : 'Running',
   'Running' : 'Paused',
   'Paused' : 'Running',
-  'Finished' : 'Beginning',
+  'Finished' : 'Resetting',
+  'Resetting' : 'Beginning',
+
 }
 
 const styles = StyleSheet.create({

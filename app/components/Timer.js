@@ -43,16 +43,17 @@ class Timer extends React.Component {
       //Alert.alert("beg prop recieved by timer")
     }
     if(this.props.appState == "Running"){
-      start(this)
+      //start(this)
     }
     if(this.props.appState == "Paused"){
-      pause(this)
+      //pause(this)
     }
     if(this.props.appState == "Finished"){
-      reset(this)
+      //complete(this)
+      //pause(this)
     }
     if(this.props.appState == "Resetting"){
-      
+      reset(this)
     }
   }
   render() {
