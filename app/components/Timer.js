@@ -13,6 +13,9 @@ class Timer extends React.Component {
       seconds: this.props.defaultSeconds,
     }
   }
+  userTime(m,s){
+    this.setState({minutes: m, seconds: s})
+  }
   componentDidMount(){
     this.interval = setInterval(() => {
       if (!paused){
@@ -37,6 +40,12 @@ class Timer extends React.Component {
     this.interval = clearInterval(() => {})
   }
   componentWillReceiveProps(nextProps){
+    if(this.props.defaultMinutes==nextProps.defaultMinutes){
+
+    }else{
+      this.setState({ minutes: nextProps.defaultMinutes });
+    }
+
     if(this.props.appState == "Beginning"){
       reset(this)
       start(this)

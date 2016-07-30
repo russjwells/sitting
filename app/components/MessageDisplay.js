@@ -29,7 +29,7 @@ class MessageDisplay extends React.Component {
 var messageMapper = {
   'Beginning': 'Welcome to Meditation',
   'Running': 'Meditation in Progress',
-  'Paused' : 'Meditation Paused',
+  'Paused' : 'Meditation in Progress', //Paused
   'Finished' : 'Meditation Complete',
   'Resetting' : 'Press to Reset'
 };

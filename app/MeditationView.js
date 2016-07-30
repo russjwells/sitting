@@ -79,7 +79,8 @@ class MeditationView extends Component {
   }
   _onPressTime(){
     tminutes=tminutes+1;
-    Alert.alert("time touched")
+    Alert.alert("time touched: "+tminutes)
+    //this.refs.Timer.userTime(tminutes,0)
   }
   render() {
     return (
