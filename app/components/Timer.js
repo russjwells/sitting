@@ -38,7 +38,7 @@ class Timer extends React.Component {
   }
   componentWillReceiveProps(nextProps){
     if(this.props.appState == "Beginning"){
-      //reset(this)
+      reset(this)
       start(this)
       //Alert.alert("beg prop recieved by timer")
     }
@@ -49,10 +49,6 @@ class Timer extends React.Component {
       //pause(this)
     }
     if(this.props.appState == "Finished"){
-      //complete(this)
-      //pause(this)
-    }
-    if(this.props.appState == "Resetting"){
       reset(this)
     }
   }
