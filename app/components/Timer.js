@@ -9,8 +9,8 @@ class Timer extends React.Component {
       //Beginning Running Finished Paused
       appState: this.props.appState,
       hours: 0,
-      minutes: 0,
-      seconds: 7,
+      minutes: this.props.defaultMinutes,
+      seconds: this.props.defaultSeconds,
     }
   }
   componentDidMount(){
@@ -23,6 +23,7 @@ class Timer extends React.Component {
             this.setState({ seconds: 59 });
           }else{
             //time ended
+            paused=true;
             this.props.completeFunction();
           }
         }
@@ -42,13 +43,16 @@ class Timer extends React.Component {
       //Alert.alert("beg prop recieved by timer")
     }
     if(this.props.appState == "Running"){
-      //start(this)
+      start(this)
     }
     if(this.props.appState == "Paused"){
       pause(this)
     }
     if(this.props.appState == "Finished"){
-      complete(this)
+      reset(this)
+    }
+    if(this.props.appState == "Resetting"){
+      
     }
   }
   render() {
@@ -72,10 +76,10 @@ function stop(timer) {
   timer.setState({seconds: 0});
 };
 function reset(timer) {
+  paused = true;
   timer.setState({
-    hours: 0,
-    minutes: 20,
-    seconds: 0,
+    minutes: timer.props.defaultMinutes,
+    seconds: timer.props.defaultSeconds,
   })
 };
 function complete(timer){
@@ -83,6 +87,7 @@ function complete(timer){
   //timer.setState({minutes: 0});
   //timer.setState({seconds: 0});
 }
+
 function pad(n, width, z) {
   z = z || '0';
   n = n + '';

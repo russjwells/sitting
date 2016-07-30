@@ -30,30 +30,18 @@ class MeditationView extends Component {
       appState: "Beginning",
       timerOn: false,
       num: 20,
+      defaultMinutes: 0,
+      defaultSeconds: 10,
     };
-    let defaultTime = 20;
-    let defaultPrepTime = 30;
   }
   componentDidMount(){
 
   }
   handleButtonClick(){
-
     this.setState({appState: stateMapper[this.state.appState]});
-    /*
-    //Action Tree
-    if (this.state.appState == "Beginning"){
-      this.setState({appState: "Running"});
-    }else if(this.state.appState == "Running"){
-      this.setState({appState: "Paused"});
-    }else if(this.state.appState == "Paused"){
-      this.setState({appState: "Running"});
-    }else if(this.state.appState == "Finished"){
-      this.setState({appState: "Beginning"});
-    }else{
-      Alert.alert("What!?")
-    }
-    */
+  }
+  resetWithDefaults() {
+
   }
   complete() {
     // Play the sound with an onEnd callback
@@ -80,7 +68,7 @@ class MeditationView extends Component {
     return (
         <View style={styles.bodyarea}>
           <MessageDisplay appState={this.state.appState} />
-          <Timer appState={this.state.appState} completeFunction={this.complete.bind(this)} halfwayFunction={this.halfway.bind(this)}/>
+          <Timer appState={this.state.appState} defaultMinutes={this.state.defaultMinutes} defaultSeconds={this.state.defaultSeconds} completeFunction={this.complete.bind(this)} halfwayFunction={this.halfway.bind(this)}/>
           <Button appState={this.state.appState} onPress={this.handleButtonClick.bind(this) }/>
         </View>
     );
