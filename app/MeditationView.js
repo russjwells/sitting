@@ -22,6 +22,9 @@ var singingbowlring = new Sound('singingbowlring.wav', Sound.MAIN_BUNDLE, (error
   }
 });
 
+let tminutes
+let tseconds
+
 class MeditationView extends Component {
 
   constructor(props) {
@@ -33,6 +36,8 @@ class MeditationView extends Component {
       userMinutes: 0,
       userSeconds: 10,
     };
+    tminutes = this.props.defaultMinutes;
+    tseconds = this.props.defaultSeconds;
   }
   componentDidMount(){
 
@@ -73,14 +78,15 @@ class MeditationView extends Component {
     Alert.alert("Halfway!")
   }
   _onPressTime(){
-    this.props.defaultMinutes=this.props.defaultMinutes+1;
+    tminutes=tminutes+1;
+    Alert.alert("time touched")
   }
   render() {
     return (
         <View style={styles.bodyarea}>
           <MessageDisplay appState={this.state.appState} />
           <TouchableOpacity onPress={this._onPressTime.bind(this)}>
-          <Timer appState={this.state.appState} defaultMinutes={this.props.defaultMinutes} defaultSeconds={this.props.defaultSeconds} completeFunction={this.complete.bind(this)} halfwayFunction={this.halfway.bind(this)} resetFunction={this.reset.bind(this)} />
+          <Timer appState={this.state.appState} defaultMinutes={tminutes} defaultSeconds={tseconds} completeFunction={this.complete.bind(this)} halfwayFunction={this.halfway.bind(this)} resetFunction={this.reset.bind(this)} />
           </TouchableOpacity>
           <Button appState={this.state.appState} onPress={this.handleButtonClick.bind(this) }/>
         </View>
