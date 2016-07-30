@@ -26,7 +26,7 @@ class MeditationView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      //Begining Running Finished and Paused
+      //Begining Running Finished Paused and Resetting
       appState: "Beginning",
       timerOn: false,
       num: 20,
@@ -54,9 +54,6 @@ class MeditationView extends Component {
       Alert.alert("What!?")
     }
     */
-  }
-  mutateAppState(stateName){
-    this.setState({appState: stateName})
   }
   complete() {
     // Play the sound with an onEnd callback

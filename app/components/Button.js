@@ -17,6 +17,7 @@ class Button extends React.Component {
   }
 
   render() {
+    let btnImg = buttonMapper[this.state.appState]
     return (
       <View style={styles.button}>
         <TouchableOpacity onPress={this._onPressButton.bind(this)} >
@@ -25,6 +26,13 @@ class Button extends React.Component {
       </View>
     );
   }
+}
+
+var buttonMapper = {
+  'Beginning' : '.././img/multidimensionalmeditator.png',
+  'Running' : '.././img/standup.png',
+  'Paused' : '.././img/multidimensionalmeditator.png',
+  'Finished' : '.././img/complete.png',
 }
 
 const styles = StyleSheet.create({

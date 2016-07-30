@@ -38,9 +38,11 @@ class Timer extends React.Component {
   componentWillReceiveProps(nextProps){
     if(this.props.appState == "Beginning"){
       //reset(this)
+      start(this)
+      //Alert.alert("beg prop recieved by timer")
     }
     if(this.props.appState == "Running"){
-      start(this)
+      //start(this)
     }
     if(this.props.appState == "Paused"){
       pause(this)
@@ -62,9 +64,7 @@ function pause(timer){
   pausedSec = timer.state.seconds;
 };
 function start(timer) {
-  if (paused){
-    paused = false;
-  }
+  paused = false;
 };
 function stop(timer) {
   paused = true;
@@ -80,8 +80,8 @@ function reset(timer) {
 };
 function complete(timer){
   paused = true;
-  timer.setState({minutes: 20});
-  timer.setState({seconds: 20});
+  //timer.setState({minutes: 0});
+  //timer.setState({seconds: 0});
 }
 function pad(n, width, z) {
   z = z || '0';
