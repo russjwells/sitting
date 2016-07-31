@@ -33,7 +33,7 @@ class Timer extends React.Component {
       }else{
 
       }
-      console.log("| "+this.props.appState)
+      //console.log("| "+this.props.appState)
     }, 1000);
   }
   componentDidUnMount() {
