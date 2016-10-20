@@ -13,6 +13,8 @@ import {
 import MeditationView from './app/MeditationView';
 import Drawer from 'react-native-drawer';
 
+import KeepAwake from 'react-native-keep-awake';
+
 class sitting extends Component {
   render() {
     return (
@@ -20,6 +22,7 @@ class sitting extends Component {
         <StatusBar
            barStyle="light-content"
         />
+        <KeepAwake />
         <View style={styles.topbar}>
         <TouchableOpacity onPress={this.handleDrawerButtonClick.bind(this) }>
           <View style={styles.drawericon}>

@@ -23,6 +23,7 @@
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		D2004CC21DB87899006F2220 /* libKCKeepAwake.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2004CC11DB87855006F2220 /* libKCKeepAwake.a */; };
 		D2B07F7A1D49CA7300FD7B4E /* libRNSound.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B07F791D49C96F00FD7B4E /* libRNSound.a */; };
 		D2B07F7C1D49CAC300FD7B4E /* bowlsounds.wav in Resources */ = {isa = PBXBuildFile; fileRef = D2B07F7B1D49CAC300FD7B4E /* bowlsounds.wav */; };
 		D2B07F7F1D4BD59A00FD7B4E /* 3bowlsounds.wav in Resources */ = {isa = PBXBuildFile; fileRef = D2B07F7D1D4BD59A00FD7B4E /* 3bowlsounds.wav */; };
@@ -109,6 +110,13 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
+		D2004CC01DB87855006F2220 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2004CBC1DB87855006F2220 /* KCKeepAwake.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = KCKeepAwake;
+		};
 		D2B07F781D49C96F00FD7B4E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D2B07F6A1D49C96F00FD7B4E /* RNSound.xcodeproj */;
@@ -140,6 +148,7 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		D2004CBC1DB87855006F2220 /* KCKeepAwake.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KCKeepAwake.xcodeproj; path = "../node_modules/react-native-keep-awake/ios/KCKeepAwake.xcodeproj"; sourceTree = "<group>"; };
 		D2B07F6A1D49C96F00FD7B4E /* RNSound.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNSound.xcodeproj; path = "../node_modules/react-native-sound/RNSound.xcodeproj"; sourceTree = "<group>"; };
 		D2B07F7B1D49CAC300FD7B4E /* bowlsounds.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bowlsounds.wav; sourceTree = "<group>"; };
 		D2B07F7D1D4BD59A00FD7B4E /* 3bowlsounds.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3bowlsounds.wav; sourceTree = "<group>"; };
@@ -161,6 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2004CC21DB87899006F2220 /* libKCKeepAwake.a in Frameworks */,
 				D2B07F7A1D49CA7300FD7B4E /* libRNSound.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
@@ -289,6 +299,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				D2004CBC1DB87855006F2220 /* KCKeepAwake.xcodeproj */,
 				D2B07F6A1D49C96F00FD7B4E /* RNSound.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -329,6 +340,14 @@
 			children = (
 				13B07F961A680F5B00A75B9A /* Sitting.app */,
 				00E356EE1AD99517003FC87E /* sittingTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D2004CBD1DB87855006F2220 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2004CC11DB87855006F2220 /* libKCKeepAwake.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -410,6 +429,10 @@
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = D2004CBD1DB87855006F2220 /* Products */;
+					ProjectRef = D2004CBC1DB87855006F2220 /* KCKeepAwake.xcodeproj */;
+				},
 				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
@@ -532,6 +555,13 @@
 			fileType = archive.ar;
 			path = libRCTText.a;
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D2004CC11DB87855006F2220 /* libKCKeepAwake.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libKCKeepAwake.a;
+			remoteRef = D2004CC01DB87855006F2220 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		D2B07F791D49C96F00FD7B4E /* libRNSound.a */ = {
@@ -742,7 +772,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -782,7 +812,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
